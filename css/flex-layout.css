@@ -1,5 +1,15 @@
 @import url("utility.css");
 
+:root {
+    --header-bgcolor: #9F2064;
+    --aside-1-bgcolor: #106396;
+    --aside-2-bgcolor: #26A4B4;
+    --article-bgcolor: #25B67B;
+    --column-bgcolor: #E4185B;
+    --footer-bgcolor: #E06B26;
+    --body-bgcolor: #B2B5BE;
+}
+
 .flex-container {
   display: flex;
   flex-direction: column;

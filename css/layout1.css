@@ -1,0 +1,124 @@
+@import url("utility.css");
+
+:root {
+  --header-bgcolor: #9f2064;
+  --aside-1-bgcolor: #106396;
+  --aside-2-bgcolor: #26a4b4;
+  --article-bgcolor: #25b67b;
+  --column-bgcolor: #e4185b;
+  --footer-bgcolor: #e06b26;
+  --body-bgcolor: #b2b5be;
+  --gap-wide: 15px;
+  --gap-narrow: 8px;
+}
+
+body {
+  background-color: var(--body-bgcolor);
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--gap-wide);
+}
+
+.flex-container > * {
+  flex: 1 0 100%;
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 10px;
+  text-align: center;
+  border-radius: 14px;
+  font-size: 2rem;
+}
+
+.flex-header {
+  background-color: var(--header-bgcolor);
+}
+
+.flex-footer {
+  background-color: var(--footer-bgcolor);
+}
+
+.flex-article {
+  background-color: var(--article-bgcolor);
+  padding: 0.5em 1em;
+}
+
+.flex-article-column-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  gap: var(--gap-wide);
+}
+
+.flex-article-label {
+  display: none;
+}
+
+.flex-article-column {
+  background-color: var(--column-bgcolor);
+  flex: 0 1 33%;
+  border-radius: 14px;
+  font-size: 1.5rem;
+  padding: 1em;
+}
+
+.flex-aside-primary {
+  background-color: var(--aside-1-bgcolor);
+}
+
+.flex-aside-secondary {
+  background-color: var(--aside-2-bgcolor);
+}
+
+@media screen and (min-width: 740px) {
+  .flex-container * {
+    border-radius: 8px;
+    font-size: 1.75rem;
+  }
+
+  .flex-aside-primary,
+  .flex-aside-secondary {
+    padding-top: 120px;
+  }
+
+  .flex-aside-primary,
+  .flex-aside-secondary {
+    padding-bottom: 120px;
+    flex: 1 1 20%;
+  }
+
+  .flex-article {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    flex: 2.5 0 50%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--gap-narrow);
+    align-content: flex-end;
+    align-items: stretch;
+  }
+
+  .flex-article-label {
+    background-color: var(--article-bgcolor);
+    flex-basis: 100%;
+    display: block;
+    padding-top: calc(120px - var(--gap-wide));
+  }
+
+  .flex-article-column-container {
+    flex: 1 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-content: flex-end;
+  }
+
+  .flex-article-column {
+    font-size: 1rem;
+    flex: 1 1 20%;
+    padding: 1.8em 1em;
+  }
+}
